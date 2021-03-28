@@ -11,4 +11,4 @@ function getWeather(cityName){
     })
 }
 
-getWeather("Toronto");
+// getWeather("Toronto");
