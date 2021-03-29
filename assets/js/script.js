@@ -2,8 +2,7 @@ var uvIndex = "";
 
 
 
-function getWeather(){
-    var cityName = $("#cityName").val().trim();
+function getWeather(cityName){
     var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=3e8aa64128a8b382a871af127be1e2d0&units=imperial`;
 
     fetch(apiUrl)
@@ -15,8 +14,8 @@ function getWeather(){
             var temperature = data.list[0].main.temp;
             var humidity = data.list[0].main.humidity;
             var windSpeed = data.list[0].wind.speed;
-
-            $("#cityNameHeader").text(cityName);
+            var currentDate = moment.unix(data.list[0].dt).format("MM/DD/YYYY");
+            $("#cityNameHeader").html(`<h4>${cityName} (${currentDate}) <img src="https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" /></h4>`);
             $("#cityTemp").text(temperature + "F");
             $("#cityHumidity").text(humidity + "%");
             $("#cityWindSpeed").text(windSpeed + "mph");
@@ -26,11 +25,19 @@ function getWeather(){
     })
 }
 
-function setWeather() {
-
-}
 
 $("#searchBtn").on("click", function(event) {
     event.preventDefault();
-    getWeather();
+    var cityName = $("#cityName").val().trim();
+    getWeather(cityName);
 });
+
+
+/* TO-DO
+- Fetch request for UV Index
+- For Loop to populate forecast data
+- appendChild for search history Buttons
+- Event Handling for search history buttons
+- Local Storage set and get for Search History Buttons
+- Fix the display height
+*/
