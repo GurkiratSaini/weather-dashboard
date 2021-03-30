@@ -18,7 +18,7 @@
         <h1 class="display-4">Weather Dashboard</h1>
     </header>
 
-    <main class="container min-vw-100 min-vh-90">
+    <main class="container min-vw-100">
         <div class="row h-100">
             <div class="col-3 bg-secondary">
                 <form>
@@ -35,8 +35,7 @@
                 </div>
             </div>
             <div class="col-9 bg-success d-flex flex-column justify-content-between">
-                <!-- <div> -->
-                    <div class="card h-50">
+                    <div class="card h-50 mt-3">
                         <div class="card-body h-100">
                           <span class="card-title" id="cityNameHeader"></span>
                           <p class="card-text">Temperature: <span id="cityTemp"></span></p>
@@ -45,41 +44,42 @@
                           <p class="card-text">UV Index: <span id="cityUV"></span></p>
                         </div>
                     </div>
-                <!-- </div> -->
-                <div class="row justify-content-around h-50" id="forecast-container">
+                <div class="h-50 d-flex flex-column justify-content-center">
+                    <h2>5-Day Forecast</h2>
+                    <div class="row justify-content-around h-50" id="forecast-container">
                     <!-- Fix This Pls -->
-                    <div class="col-12"><h2>5-Day Forecast</h2></div>
-                    <div class="card col-2">
-                        <h5><span id="forecastDate1"></span></h5>
-                        <img id="forecastImg1" class="forecastImg"/>
-                        <h6>Temp: <span id="forecastTemp1"></span></h6>
-                        <h6>Humidity: <span id="forecastHumidity1"></span></h6>
-                    </div>
-                    <div class="card col-2">
-                        <h5><span id="forecastDate2"></span></h5>
-                        <img id="forecastImg2" class="forecastImg"/>
-                        <h6>Temp: <span id="forecastTemp2"></span></h6>
-                        <h6>Humidity: <span id="forecastHumidity2"></span></h6>
-                    </div>
-                    <div class="card col-2">
-                        <h5><span id="forecastDate3"></span></h5>
-                        <img id="forecastImg3" class="forecastImg" />
-                        <h6>Temp: <span id="forecastTemp3"></span></h6>
-                        <h6>Humidity: <span id="forecastHumidity3"></span></h6>
-                    </div>
-                    <div class="card col-2">
-                        <h5><span id="forecastDate4"></span></h5>
-                        <img id="forecastImg4" class="forecastImg"/>
-                        <h6>Temp: <span id="forecastTemp4"></span></h6>
-                        <h6>Humidity: <span id="forecastHumidity4"></span></h6>
-                    </div>
-                    <div class="card col-2">
-                        <h5><span id="forecastDate5"></span></h5>
-                        <img id="forecastImg5" class="forecastImg"/>
-                        <h6>Temp: <span id="forecastTemp5"></span></h6>
-                        <h6>Humidity: <span id="forecastHumidity5"></span></h6>
-                    </div>
+                        <div class="card col-2">
+                            <h5><span id="forecastDate1"></span></h5>
+                            <img id="forecastImg1" class="forecastImg"/>
+                            <h6>Temp: <span id="forecastTemp1"></span></h6>
+                            <h6>Humidity: <span id="forecastHumidity1"></span></h6>
+                        </div>
+                        <div class="card col-2">
+                            <h5><span id="forecastDate2"></span></h5>
+                            <img id="forecastImg2" class="forecastImg"/>
+                            <h6>Temp: <span id="forecastTemp2"></span></h6>
+                            <h6>Humidity: <span id="forecastHumidity2"></span></h6>
+                        </div>
+                        <div class="card col-2">
+                            <h5><span id="forecastDate3"></span></h5>
+                            <img id="forecastImg3" class="forecastImg" />
+                            <h6>Temp: <span id="forecastTemp3"></span></h6>
+                            <h6>Humidity: <span id="forecastHumidity3"></span></h6>
+                        </div>
+                        <div class="card col-2">
+                            <h5><span id="forecastDate4"></span></h5>
+                            <img id="forecastImg4" class="forecastImg"/>
+                            <h6>Temp: <span id="forecastTemp4"></span></h6>
+                            <h6>Humidity: <span id="forecastHumidity4"></span></h6>
+                        </div>
+                        <div class="card col-2">
+                            <h5><span id="forecastDate5"></span></h5>
+                            <img id="forecastImg5" class="forecastImg"/>
+                            <h6>Temp: <span id="forecastTemp5"></span></h6>
+                            <h6>Humidity: <span id="forecastHumidity5"></span></h6>
+                        </div>
                     
+                    </div>
                 </div>
             </div>
         </div>
