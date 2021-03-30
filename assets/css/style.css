@@ -26,3 +26,7 @@ header {
 main {
     height: 90%;
 }
+
+.orangeClass {
+    background-color: var(--orange);
+}
