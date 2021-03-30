@@ -1,3 +1,12 @@
+$(document).ready(function() {
+    if(localStorage.length === 0 || !localStorage.getItem("cities")){
+        console.log("No Search history found, setting first search query to Toronto");
+        getWeather("Toronto");
+    }
+    // let lastSearch = localStorage.getItem(`city${localStorage.length-1}`);
+});
+
+var cities = [];
 
 function getWeather(cityName){
     var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=3e8aa64128a8b382a871af127be1e2d0&units=imperial&exclude=current,minutely,hourly`;
@@ -5,6 +14,9 @@ function getWeather(cityName){
     $("#cityName").val("");
     var searchHistoryBtn = $(`<button type="button" class="btn btn-light">${cityName}</button>`);
     $(".btn-group-vertical").append(searchHistoryBtn);
+    cities.push(cityName);
+    console.log(cities);
+    localStorage.setItem("cities", JSON.stringify(cities));
 
     fetch(apiUrl)
     .then(function(response) {
@@ -50,10 +62,10 @@ function getWeather(cityName){
                         $(`#forecastTemp${i}`).text(data.daily[i].temp.day + "F");
                         $(`#forecastHumidity${i}`).text(data.daily[i].humidity + "%");
                     }
-                })
+                });
             });
         });
-    })
+    });
 }
 
 
