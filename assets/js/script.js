@@ -1,9 +1,10 @@
-var uvIndex = "";
-
-
 
 function getWeather(cityName){
     var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=3e8aa64128a8b382a871af127be1e2d0&units=imperial&exclude=current,minutely,hourly`;
+
+    $("#cityName").val("");
+    var searchHistoryBtn = $(`<button type="button" class="btn btn-light">${cityName}</button>`);
+    $(".btn-group-vertical").append(searchHistoryBtn);
 
     fetch(apiUrl)
     .then(function(response) {
@@ -64,8 +65,6 @@ $("#searchBtn").on("click", function(event) {
 
 
 /* TO-DO
-- Fetch request for UV Index
-- For Loop to populate forecast data
 - appendChild for search history Buttons
 - Event Handling for search history buttons
 - Local Storage set and get for Search History Buttons

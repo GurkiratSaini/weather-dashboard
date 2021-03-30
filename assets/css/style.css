@@ -22,3 +22,7 @@ header {
     border: none;
     outline: none;
 }
+
+main {
+    height: 90%;
+}
