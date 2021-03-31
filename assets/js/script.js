@@ -117,7 +117,7 @@ $("#delete-btn").on("click", function() {
     $(".btn-group-vertical").empty();
 });
 
-$(document).on("click", ".btn-light", function(event) {
+$(document).on("click", ".btn-secondary", function(event) {
     getWeather(event.target.innerText);
 });
 
